@@ -1,0 +1,157 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique @db.VarChar(255)
+  password     String    @db.VarChar(255)
+  providerId   String?   @db.VarChar(120)
+  providerType Provider?
+  isConfirmed  Boolean   @default(false) @db.TinyInt
+  orders       Order[]
+  like         Like?
+  profiles     Profile?
+  // ResetToken   ResetToken[]
+}
+
+enum Provider {
+  Google
+  Facebook
+  Apple
+}
+
+model Product {
+  id               String           @id @default(uuid())
+  title            String           @db.VarChar(255)
+  discount         Int?             @db.TinyInt()
+  quantity         Int              @db.SmallInt()
+  price            Int              @db.SmallInt()
+  shortDescription String?          @db.LongText()
+  about            String?          @db.LongText()
+  howToUse         String?          @db.LongText()
+  like             Like?
+  orders           Order[]
+  subCategories    SubCategory[]
+  categories       Category[]
+  brands           Brand[]
+  productImages    ProductImage[]
+  characteristics  Characteristic[]
+  ingredients      Ingredient[]
+}
+
+model Order {
+  id          String    @id @default(uuid())
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  totalPrice  Int
+  orderStatus Status
+  products    Product[]
+
+  @@index([userId])
+}
+
+enum Status {
+  Processing
+  Completed
+}
+
+model Like {
+  id        String  @id @default(uuid())
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String  @unique
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String  @unique
+
+  @@index([productId])
+}
+
+model Profile {
+  id          String     @id @default(uuid())
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String     @unique
+  firstName   String?    @db.VarChar(15)
+  lastName    String?    @db.VarChar(15)
+  phoneNumber String?    @db.VarChar(12)
+  dateOfBirth String?    @db.VarChar(255)
+  locations   Location[]
+
+  @@index([userId])
+}
+
+model Location {
+  id        String  @id @default(uuid())
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  address   String? @db.VarChar(255)
+  zipCode   String? @db.VarChar(5)
+  city      String? @db.VarChar(75)
+  country   String? @db.VarChar(75)
+  state     String? @db.VarChar(75)
+  profileId String
+
+  @@index([profileId])
+}
+
+model ResetToken {
+  id    String @id @default(uuid())
+  // user   User   @relation(fields: [userId], references: [id])
+  // userId String
+  token String
+
+  // @@index([userId])
+}
+
+model SubCategory {
+  id       String    @id @default(uuid())
+  title    String    @db.VarChar(255)
+  products Product[]
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  title    String    @unique
+  products Product[]
+}
+
+model Brand {
+  id       String    @id @default(uuid())
+  title    String    @db.VarChar(255)
+  products Product[]
+}
+
+model ProductImage {
+  id        String  @id @default(uuid())
+  products  Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  publicId  String
+  url       String  @db.Text()
+
+  @@index([productId])
+}
+
+model Characteristic {
+  id          String  @id @default(uuid())
+  products    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId   String
+  description String  @db.Text()
+
+  @@index([productId])
+}
+
+model Ingredient {
+  id          String  @id @default(uuid())
+  products    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId   String
+  description String  @db.Text()
+
+  @@index([productId])
+}
