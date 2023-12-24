@@ -3,7 +3,7 @@ import { prisma } from 'src/lib/clients/prisma';
 import { UserDto } from 'src/lib/dtos/user.dto';
 import * as argon2 from 'argon2';
 import { JwtService } from '@nestjs/jwt';
-import { transporter } from 'src/lib/clients/nodemailer';
+import { transporter } from '../lib/clients/nodeMailer';
 import { mailGenerator } from 'src/lib/clients/mailGenerator';
 import { ConfigService } from '@nestjs/config';
 
