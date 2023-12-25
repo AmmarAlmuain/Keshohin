@@ -1,0 +1,1023 @@
+{
+	"info": {
+		"_postman_id": "9344ac3e-4fde-40bf-a071-bc6b6988c85b",
+		"name": "Keshohin",
+		"description": "Keshohin: A Backend API for Online Cosmetics Ecommerce Services Keshohin is a backend API that enables online cosmetics ecommerce services to manage products, orders, customers, and other features such as authentication, authorization, validation, error handling. Keshohin aims to simplify the development and maintenance of online cosmetics ecommerce services by providing a robust and scalable solution.\n\nThe project objectives are to:\n\n- Design and implement a RESTful API using Node.js and Nest.js framework\n    \n- Use MySQL (Planet Scale) as the database to store users, profiles, locations, orders, products, etc.\n    \n- Use Prisma as an ORM library to interact with MySQL (Planet Scale)\n    \n- Use JWT for authentication and authorization\n    \n- Use Render to deploy the project on the internet\n    \n\nThe project phases are:\n\n- Planning: Conduct research and analysis on multiple well-known cosmetics websites and their needs\n    \n- Designing: Create the database schema using Prisma models and methods, and design the API endpoints using Nest.js controllers and services. Test the API functionality using Postman\n    \n- Developing: Write the code for the API using Node.js modules such as prisma, nodemail, mailGen, cloudinary, etc. Follow best practices such as modularization and documentation\n    \n- Deploying: Deploy the API on Render and configure the settings such as environment variables and logging levels",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31844676"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"happy@test.com\",\r\n    \"password\": \" Happy.ness1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/auth/register",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"happy@test.com\",\r\n    \"password\": \" Happy.ness1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Super Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"happy@test.com\",\r\n    \"password\": \" Happy.ness1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/auth/super-login",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"super-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/verify-account/:token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"verify-account",
+								":token"
+							],
+							"variable": [
+								{
+									"key": "token",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/profile",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/profile",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/location",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"2-chōme-8-5 Yaesu\",\r\n    \"zipCode\": \"10428\",\r\n    \"city\": \"Chuo City\",\r\n    \"country\": \"Japan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/location",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"2-chōme-8-5 Yaesu\",\r\n    \"zipCode\": \"10428\",\r\n    \"city\": \"Chuo City\",\r\n    \"country\": \"Japan\",\r\n    \"state\": \"Tokyo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/location/:locationId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"location",
+								":locationId"
+							],
+							"variable": [
+								{
+									"key": "locationId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/location/:locationId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"location",
+								":locationId"
+							],
+							"variable": [
+								{
+									"key": "locationId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/like/:productId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"like",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/like/:productId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"like",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "brands",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "subCategories",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Preview",
+									"type": "file",
+									"src": "/C:/Users/Verse/Downloads/Cosmetic-cream-product-ad-on-transparent-background-PNG.png"
+								},
+								{
+									"key": "PreviewTwo",
+									"type": "file",
+									"src": "/C:/Users/Verse/Downloads/Natural-Cosmetic-cream-product-ad-Clipart-PNG.png"
+								},
+								{
+									"key": "title",
+									"value": "Cosmetic cream product",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "shortDescription",
+									"value": "short description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "Alpha",
+									"type": "text"
+								},
+								{
+									"key": "subCategory",
+									"value": "Hand Care",
+									"type": "text"
+								},
+								{
+									"key": "characteristics[0]",
+									"value": "characteristic",
+									"type": "text"
+								},
+								{
+									"key": "ingredients[0]",
+									"value": "ingredient",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/:productId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/brands",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"alpha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/brand",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brand",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/brand/:brandId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								"brand",
+								":brandId"
+							],
+							"variable": [
+								{
+									"key": "brandId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sub Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/sub-categories",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								"sub-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sub Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Hand Care\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/sub-category",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sub Category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/product/sub-category/:subCategoryId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"product",
+								"sub-category",
+								":subCategoryId"
+							],
+							"variable": [
+								{
+									"key": "subCategoryId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/user/profile",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/order/:userId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"order",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalPrice\": \"1000\",\r\n    \"orderStatus\": \"Processing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/order",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": ":token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://keshohin.onrender.com/order/complete/:userId",
+							"protocol": "https",
+							"host": [
+								"keshohin",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"order",
+								"complete",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
