@@ -1,26 +1,25 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Keshohin: A Backend API for Online Cosmetics Ecommerce Services
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Keshohin is a backend API that enables online cosmetics ecommerce services to manage products, orders, customers, and other features such as authentication, authorization, validation, error handling. Keshohin aims to simplify the development and maintenance of online cosmetics ecommerce services by providing a robust and scalable solution.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Project Objectives
+
+- Design and implement a RESTful API using Node.js and Nest.js framework
+- Use MySQL (Planet Scale) as the database to store users, profiles, locations, orders, products, etc.
+- Use Prisma as an ORM library to interact with MySQL (Planet Scale)
+- Use JWT for authentication and authorization
+- Use Render to deploy the project on the internet
+
+## Project Phases
+
+1. **Planning**: Conduct research and analysis on multiple well-known cosmetics websites and their needs
+2. **Designing**: Create the database schema using Prisma models and methods, and design the API endpoints using Nest.js controllers and services. Test the API functionality using Postman
+3. **Developing**: Write the code for the API using Node.js modules such as prisma, nodemail, mailGen, cloudinary, etc. Follow best practices such as modularization and documentation
+4. **Deploying**: Deploy the API on Render and configure the settings such as environment variables and logging levels
+
+## Testing
+
+The collection test is in the `Keshohin.postman_collection.json` file.
 
 ## Description
 
